@@ -23,15 +23,19 @@ describe 'beats::default' do
       expect(chef_run).to update_apt_update('update')
     end
 
-    it 'should add the elastic stack to the sources list' do
+    it 'should run bash to wget the key for elastic stack' do
       expect(chef_run).to add_apt_repository('elastic-co')
+    end
+
+    it 'should add the elastic stack to the sources list' do
+      expect(chef_run).to run_bash('wget_elastic')
     end
 
     it "should install apt-transport-https" do
       expect(chef_run).to install_package("apt-transport-https")
     end
 
-    it "should install apt-transport-https" do
+    it "should install filebeat" do
       expect(chef_run).to install_package("filebeat")
     end
   end
