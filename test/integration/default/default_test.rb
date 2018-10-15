@@ -37,12 +37,12 @@ describe service("metricbeat") do
   it { should be_running }
 end
 
-describe port(5404) do
+describe port(5044) do
   it { should be_listening }
   its("addresses") { should include '0.0.0.0' }
 end
 
-describe port(5405) do
+describe port(5045) do
   it { should be_listening }
   its("addresses") { should include '0.0.0.0' }
 end
