@@ -15,9 +15,8 @@ describe package 'metricbeat' do
   its('version') { should match /6\.4/ }
 end
 
-describe file("/etc/apt/trusted.gpg") do
-  it { should exist }
-  its('content') { should match /4609 5ACC 8548 582C 1A26 99A9 D27D 666C D88E 42B4/ }
+describe bash("wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add -") do
+  its('exit_status') {should eq 0}
 end
 
 describe file("/etc/filebeat/filebeat.yml") do
@@ -36,14 +35,4 @@ end
 describe service("metricbeat") do
   it { should be_enabled }
   it { should be_running }
-end
-
-describe port(5044) do
-  it { should be_listening }
-  its("addresses") { should include '0.0.0.0' }
-end
-
-describe port(5045) do
-  it { should be_listening }
-  its("addresses") { should include '0.0.0.0' }
 end
