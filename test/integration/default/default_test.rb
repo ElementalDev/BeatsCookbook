@@ -16,14 +16,33 @@ describe package 'metricbeat' do
 end
 
 describe file("/etc/apt/trusted.gpg") do
-  it{ should exist }
+  it { should exist }
 end
 
-
 describe file("/etc/filebeat/filebeat.yml") do
-  it{ should exist }
+  it { should exist }
 end
 
 describe file("/etc/metricbeat/metricbeat.yml") do
-  it{ should exist }
+  it { should exist }
+end
+
+describe service("filebeat") do
+  it { should be_enabled }
+  it { should be_running }
+end
+
+describe service("metricbeat") do
+  it { should be_enabled }
+  it { should be_running }
+end
+
+describe port(5404) do
+  it { should be_listening }
+  its("addresses") { should include '0.0.0.0' }
+end
+
+describe port(5405) do
+  it { should be_listening }
+  its("addresses") { should include '0.0.0.0' }
 end
