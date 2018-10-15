@@ -66,5 +66,13 @@ describe 'beats::default' do
     it "should start the metricbeat service" do
      expect(chef_run).to start_service("metricbeat")
     end
+
+    it "should enable the filebeat service" do
+     expect(chef_run).to enable_service("filebeat")
+    end
+
+    it "should enable the metricbeat service" do
+     expect(chef_run).to enable_service("metricbeat")
+    end
   end
 end
