@@ -38,5 +38,25 @@ describe 'beats::default' do
     it "should install filebeat" do
       expect(chef_run).to install_package("filebeat")
     end
+
+    it "should install metricbeat" do
+      expect(chef_run).to install_package("metricbeat")
+    end
+
+    it "should delete filebeat.yml" do
+      expect(chef_run).to delete_file("/etc/filebeat/filebeat.yml")
+    end
+
+    it "should delete metricbeat.yml" do
+      expect(chef_run).to delete_file("/etc/metricbeat/metricbeat.yml")
+    end
+
+    it "should create a filebeat.yml template in /etc/filebeat/filebeat.yml" do
+     expect(chef_run).to create_template("/etc/filebeat/filebeat.yml")
+    end
+
+    it "should create a metricbeat.yml template in /etc/metricbeat/metricbeat.yml" do
+     expect(chef_run).to create_template("/etc/metricbeat/metricbeat.yml")
+    end
   end
 end

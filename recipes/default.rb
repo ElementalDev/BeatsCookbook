@@ -32,7 +32,28 @@ apt_update("update") do
   action :update
 end
 
-# # Install filebeat
-# package("filebeat") do
-#   action :install
-# end
+# Install filebeat
+package("filebeat") do
+  action :install
+end
+
+# Install metricbeat
+package("metricbeat") do
+  action :install
+end
+
+file "/etc/filebeat/filebeat.yml" do
+  action :delete
+end
+
+file "/etc/metricbeat/metricbeat.yml" do
+  action :delete
+end
+
+template "/etc/filebeat/filebeat.yml" do
+  source "filebeat.yml.erb"
+end
+
+template "/etc/metricbeat/metricbeat.yml" do
+  source "metricbeat.yml.erb"
+end

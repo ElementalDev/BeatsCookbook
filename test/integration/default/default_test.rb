@@ -10,6 +10,20 @@ describe package 'filebeat' do
   its('version') { should match /6\./ }
 end
 
+describe package 'metricbeat' do
+  it { should be_installed }
+  its('version') { should match /6\./ }
+end
+
 describe file("/etc/apt/trusted.gpg") do
+  it{ should exist }
+end
+
+
+describe file("/etc/filebeat/filebeat.yml") do
+  it{ should exist }
+end
+
+describe file("/etc/metricbeat/metricbeat.yml") do
   it{ should exist }
 end
