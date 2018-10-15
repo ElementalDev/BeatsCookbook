@@ -7,16 +7,17 @@
 
 describe package 'filebeat' do
   it { should be_installed }
-  its('version') { should match /6\./ }
+  its('version') { should match /6\.4/ }
 end
 
 describe package 'metricbeat' do
   it { should be_installed }
-  its('version') { should match /6\./ }
+  its('version') { should match /6\.4/ }
 end
 
 describe file("/etc/apt/trusted.gpg") do
   it { should exist }
+  its('content') { should match /4609 5ACC 8548 582C 1A26 99A9 D27D 666C D88E 42B4/ }
 end
 
 describe file("/etc/filebeat/filebeat.yml") do
