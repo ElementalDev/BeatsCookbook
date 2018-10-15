@@ -58,5 +58,13 @@ describe 'beats::default' do
     it "should create a metricbeat.yml template in /etc/metricbeat/metricbeat.yml" do
      expect(chef_run).to create_template("/etc/metricbeat/metricbeat.yml")
     end
+
+    it "should start the filebeat service" do
+     expect(chef_run).to start_service("filebeat")
+    end
+
+    it "should start the metricbeat service" do
+     expect(chef_run).to start_service("metricbeat")
+    end
   end
 end

@@ -42,18 +42,26 @@ package("metricbeat") do
   action :install
 end
 
-file "/etc/filebeat/filebeat.yml" do
+file("/etc/filebeat/filebeat.yml")do
   action :delete
 end
 
-file "/etc/metricbeat/metricbeat.yml" do
+file("/etc/metricbeat/metricbeat.yml") do
   action :delete
 end
 
-template "/etc/filebeat/filebeat.yml" do
+template( "/etc/filebeat/filebeat.yml") do
   source "filebeat.yml.erb"
 end
 
-template "/etc/metricbeat/metricbeat.yml" do
+template("/etc/metricbeat/metricbeat.yml") do
   source "metricbeat.yml.erb"
+end
+
+service("filebeat") do
+  action [:enable, :start]
+end
+
+service("metricbeat") do
+  action [:enable, :start]
 end
