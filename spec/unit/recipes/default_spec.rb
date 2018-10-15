@@ -18,5 +18,21 @@ describe 'beats::default' do
     it 'converges successfully' do
       expect { chef_run }.to_not raise_error
     end
+
+    it 'should run apt update' do
+      expect(chef_run).to update_apt_update('update')
+    end
+
+    it 'should add the elastic stack to the sources list' do
+      expect(chef_run).to add_apt_repository('elastic-co')
+    end
+
+    it "should install apt-transport-https" do
+      expect(chef_run).to install_package("apt-transport-https")
+    end
+
+    it "should install apt-transport-https" do
+      expect(chef_run).to install_package("filebeat")
+    end
   end
 end
