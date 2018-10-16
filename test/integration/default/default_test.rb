@@ -16,7 +16,7 @@ describe package 'metricbeat' do
 end
 
 describe bash("wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add -") do
-  its('exit_status') {should eq 0}
+  its('exit_status') { should eq 0 }
 end
 
 describe file("/etc/filebeat/filebeat.yml") do
