@@ -1,4 +1,6 @@
-# beats
+# Beats Cookbook
 
-TODO: Enter the cookbook description here.
+This is a cookbook that can be used to install:
 
+- [x] Filebeat
+- [x] Metricbeat
