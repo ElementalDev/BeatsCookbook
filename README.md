@@ -81,7 +81,9 @@ cookbook "beats", git: "git@github.com:RCollettSG/BeatsCookbook.git"
   berks vendor cookbooks
 ```
 
-5. <p style="font-size: 16px;"> If done correctly, a cookbooks directory should appear in the directory you are in, containing the beats cookbook. </p>
+5. <p style="font-size: 16px;"> If done correctly, a cookbooks directory should appear in the directory you are in, containing the beats cookbook. A Berksfile.lock should also appear. </p>
+
+![file tree](./readmeimg/cbfiletree.png)
 
 
 ### <u>Vagrant</u>
@@ -90,7 +92,9 @@ To use the cookbook with Vagrant, insert these lines into your Vagrantfile.
 </p>
 
 ```ruby
-
+db.vm.provision "chef_solo" do |chef|
+  chef.add_recipe "beats::default"
+end
 ```
 
 ### <u>Packer</u>
@@ -108,4 +112,4 @@ To use the cookbook with Packer, insert these lines into your packer.json file.
   ]
 ```
 
-<u><h2 id="tests">What is filebeat and metricbeat?</h2></u>
+<u><h2 id="tests">Unit and Integration tests</h2></u>
