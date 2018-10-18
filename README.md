@@ -1,8 +1,8 @@
 # <u>___Beats Cookbook___</u>
-<center><div>
+<div>
   <img width="150px;" src="./readmeimg/filebeat.png" alt="FB">
   <img width="150px;" src="./readmeimg/metricbeat.png" alt="FB">
-</div></center>
+</div>
 
 <p style="font-size: 18px;">This cookbook was created to be able to automatically install:</p>
 
@@ -21,7 +21,7 @@
 <u><h2 id="what">What is filebeat and metricbeat?</h2></u>
 
 <p style="font-size: 18px;">
-Filebeats and Metricbeats are a part of the [elastic stack](https://www.elastic.co/ "elastic stack"), Which is used to monitor immutable infrastructure.
+Filebeats and Metricbeats are a part of the <a https://www.elastic.co/>elastic stack</a> Which is used to monitor immutable infrastructure.
 </p>
 
 <p style="font-size: 18px;">
@@ -83,7 +83,7 @@ cookbook "beats", git: "git@github.com:RCollettSG/BeatsCookbook.git"
 
 5. <p style="font-size: 16px;"> If done correctly, a cookbooks directory should appear in the directory you are in, containing the beats cookbook. A Berksfile.lock should also appear. </p>
 
-<center>![file tree](readmeimg/cbfiletree.png)</center>
+<center> ![file tree](readmeimg/cbfiletree.png) </center>
 
 
 ### <u>Vagrant</u>
