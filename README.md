@@ -1,7 +1,8 @@
 # <u>___Beats Cookbook___</u>
 <div>
+  <img width="150px;" src="./readmeimg/elastic-logo.svg" alt="ES">
   <img width="150px;" src="./readmeimg/filebeat.png" alt="FB">
-  <img width="150px;" src="./readmeimg/metricbeat.png" alt="FB">
+  <img width="150px;" src="./readmeimg/metricbeat.png" alt="MB">
 </div>
 
 <p style="font-size: 18px;">This cookbook was created to be able to automatically install:</p>
