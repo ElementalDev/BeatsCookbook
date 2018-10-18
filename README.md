@@ -83,7 +83,7 @@ cookbook "beats", git: "git@github.com:RCollettSG/BeatsCookbook.git"
 
 5. <p style="font-size: 16px;"> If done correctly, a cookbooks directory should appear in the directory you are in, containing the beats cookbook. A Berksfile.lock should also appear. </p>
 
-<center> ![file tree](readmeimg/cbfiletree.png) </center>
+![file tree](./readmeimg/cbfiletree.png)
 
 
 ### <u>Vagrant</u>
