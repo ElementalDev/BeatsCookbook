@@ -1,6 +1,6 @@
-# <u>___Beats Cookbook___</u>                <img width="150px;" src="./readmeimg/elastic-logo.svg" alt="ES">
-<div>
+# <u>___Beats Cookbook___</u>                
 
+<div>
   <img width="150px;" src="./readmeimg/filebeat.png" alt="FB">
   <img width="150px;" src="./readmeimg/metricbeat.png" alt="MB">
 </div>
