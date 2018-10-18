@@ -26,10 +26,7 @@ filebeat.inputs:
   # Paths that should be crawled and fetched. Glob based paths.
   paths:
     - /var/log/syslog
-    - /var/log/wtmp
-    - /var/log/nginx/error.log
     - /var/log/filebeat/filebeat
-    - /home/ubuntu/.pm2/*.log
     - /home/ubuntu/.bash_history
 
   # Exclude lines. A list of regular expressions to match. It drops the lines that are
@@ -156,7 +153,7 @@ setup.template.settings:
 #----------------------------- Logstash output --------------------------------
 output.logstash:
   # The Logstash hosts
-  hosts: ["0.0.0.0:5044"]
+  hosts: ["10.1.0.0:5044"]
 
   # Optional SSL. By default is off.
   # List of root certificates for HTTPS server verifications
