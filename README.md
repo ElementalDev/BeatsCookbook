@@ -52,7 +52,7 @@ output.logstash:
 Metricbeat has its own configuration as well, metricbeat.yml, which is very similar to the filebeat.yml, except you cannot choose the input. The input for metricbeat comes from system readings such as CPU usage, RAM usage, Core number etc.
 </p>
 
-<u><h2 id="how">How to use this cookbook?</h2></u>
+<u><h2 id="how">How to use this cookbook</h2></u>
 
 ### Initial preparation
 <p style="font-size: 18px;">
@@ -83,7 +83,7 @@ cookbook "beats", git: "git@github.com:RCollettSG/BeatsCookbook.git"
 
 5. <p style="font-size: 16px;"> If done correctly, a cookbooks directory should appear in the directory you are in, containing the beats cookbook. A Berksfile.lock should also appear. </p>
 
-![file tree](./readmeimg/cbfiletree.png)
+<center>![file tree](./readmeimg/cbfiletree.png)</center>
 
 
 ### <u>Vagrant</u>
@@ -112,4 +112,33 @@ To use the cookbook with Packer, insert these lines into your packer.json file.
   ]
 ```
 
-<u><h2 id="tests">Unit and Integration tests</h2></u>
+<u><h2 id="tests">Run the tests</h2></u>
+<p style="font-size: 18px;">
+ChefSpec has been used to write the unit tests and run them effectively. It has 100% coverage of the code, so all of the methods within the recipe have a corresponding test.
+</p>
+
+<p style="font-size: 18px;">
+To run these tests, use the following:
+</p>
+
+```bash
+  chef exec rspec spec
+```
+
+<p style="font-size: 18px;">
+Inspec has been used to write and test the integration tests. There are tests for package installs, services running and files existing to ensure maximum robustness.
+</p>
+
+<p style="font-size: 18px;">
+These tests are run using the configuration written in the kitchen.yml, which is using vagrant. It is also pipeline ready, with a kitchen.cloud.yml to enable it to run on an AWS instance within a CI/CD pipeline for automation purposes.
+</p>
+
+<p style="font-size: 18px;">
+To run these tests, use the following:
+</p>
+
+```bash
+  kitchen test
+```
+
+---
