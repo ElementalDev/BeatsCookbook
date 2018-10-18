@@ -1,4 +1,4 @@
-# <u>___Beats Cookbook___</u>  <img width="150px;" src="./readmeimg/elastic-logo.svg" alt="ES">
+# <u>___Beats Cookbook___</u>                <img width="150px;" src="./readmeimg/elastic-logo.svg" alt="ES">
 <div>
 
   <img width="150px;" src="./readmeimg/filebeat.png" alt="FB">
